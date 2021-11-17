@@ -1,0 +1,6 @@
+<h2 class="header center"> Editer {{ singPokemon?.name }} </h2>
+
+<p class="center">
+  <img *ngIf="singPokemon" [src]="singPokemon.picture">
+</p>
+<pokemon-form [pookemon]="singPokemon"></pokemon-form>

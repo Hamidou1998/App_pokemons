@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {AuthService} from "../shared/AuthService";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngPokemonApp';
+  title = 'Application de Pokemons';
+  isConnect:Boolean=true;
+
+
+  constructor(
+    private service:AuthService,
+  ) { }
+
+  ngOnInit(): void {
+    this.isConnect=this.service.isLoggedIn;
+    console.log(this.isConnect);
+  }
 }

@@ -1,0 +1,29 @@
+<h1 class='center'>Pokémons</h1>
+<div class='container'>
+<div class="center">
+  <label class="center"><h6>Recherche Pokemon</h6></label>
+  <input type="email" class="center form-control" id="search-text" aria-describedby="search-text"
+         placeholder="Entrez le nom de votre pokemon"
+         autofocus
+         [(ngModel)]="searchText">
+</div>
+
+
+  <div class="row">
+    <div *ngFor='let pokemon of pokemons | filterPipe:searchText' class="col s6 m4">
+      <div class="card horizontal" (click)="selectPokemon(pokemon)" appBorderCard='#FFFF00'>
+        <div class="card-image">
+          <img [src]="pokemon.picture">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{ pokemon.name }}</p>
+            <p><small>{{ pokemon.created | date | uppercase }}</small></p>
+            <span *ngFor='let type of pokemon.types' class="{{ type | pokemonTypeColor }}">{{ type }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
