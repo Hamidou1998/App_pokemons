@@ -10,7 +10,7 @@ export class AuthService {
   }
 
   login(name: string, password: string) :Observable<boolean> {
-    const isLoggedn = (name === 'hamid' && password === 'hamid');
+    const isLoggedn = (name === 'hamidou' && password === 'hamid');
     return of(true).pipe(
       delay(1000),
       tap(val => this.isLoggedIn = isLoggedn)

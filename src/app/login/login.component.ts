@@ -22,11 +22,15 @@ export class LoginComponent implements OnInit {
   }
   connecter(){
     this.service.login(this.username,this.password).subscribe( result => {
+     // console.log(result);
       if(result){
         this.router.navigate(['/pokemons']);
       }
-     Swal.fire("Connexion refuser ","Veillez ressayer!");
-      this.router.navigate(['pokemons/login']);
+      else
+      {
+        Swal.fire("Connexion refuser ","Veillez ressayer!");
+        this.router.navigate(['pokemons/login']);
+      }
     });
   }
   goback(){
