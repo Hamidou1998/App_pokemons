@@ -37,6 +37,6 @@ export class LoginComponent implements OnInit {
 
   SetMessage(){
     this.message = this.service.isLoggedIn ?
-      'Vous etes connecté.' : 'Identifiant"url": "git@github.com:Hamidou1998/App_pokemons.git" ou mots de passe incorrect!';
+      'Vous etes connecté.' : 'Identifiant ou mots de passe incorrect!';
   }
 }
