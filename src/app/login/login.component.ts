@@ -26,11 +26,9 @@ export class LoginComponent implements OnInit {
       if(result){
         this.router.navigate(['/pokemons']);
       }
-      else
-      {
         Swal.fire("Connexion refuser ","Veillez ressayer!");
         this.router.navigate(['pokemons/login']);
-      }
+
     });
   }
   goback(){
